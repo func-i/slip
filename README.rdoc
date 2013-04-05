@@ -1,6 +1,28 @@
 = slip
 
-Description goes here.
+A Ruby wrapper for the Slideshare.net API.  http://www.slideshare.net/developers
+
+<tt>
+  slip_client = Slip::Slideshare::Client.new(ENV['SLIDESHARE_API_KEY'], ENV['SLIDESHARE_SHARED_SECRET'])
+
+  # => Upload this document with a username and password
+  response = slip_client.upload_slideshow(
+    username: ENV['SLIDESHARE_USERNAME'], 
+    password: ENV['SLIDESHARE_PASSWORD'], 
+    upload_url: "http://path_to_file"
+  )
+
+  if response["SlideShowUploaded"]
+    # The upload was a success  
+    slideshare_id = response["SlideShowUploaded"]["SlideShowID"]
+  end
+
+  # Will return the detailed version of the slideshow by default
+  response = slip_client.get_slideshow(slideshow_id: @document.slideshareid)
+  if response["Slideshow"]  
+    puts response["Slideshow"]
+  end
+</tt>
 
 == Contributing to slip
  
@@ -14,6 +36,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2013 Jonathan Salis. See LICENSE.txt for
+Copyright (c) 2013 Functional Imperative. See LICENSE.txt for
 further details.
 
