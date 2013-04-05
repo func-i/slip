@@ -2,7 +2,7 @@
 
 A Ruby wrapper for the Slideshare.net API.  http://www.slideshare.net/developers
 
-<tt>
+
   slip_client = Slip::Slideshare::Client.new(ENV['SLIDESHARE_API_KEY'], ENV['SLIDESHARE_SHARED_SECRET'])
 
   # => Upload this document with a username and password
@@ -22,7 +22,6 @@ A Ruby wrapper for the Slideshare.net API.  http://www.slideshare.net/developers
   if response["Slideshow"]  
     puts response["Slideshow"]
   end
-</tt>
 
 == Contributing to slip
  
