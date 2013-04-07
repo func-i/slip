@@ -5,11 +5,7 @@ require 'slideshare/user'
 
 module Slip
   module Slideshare
-    class Client
-      require 'net/https'
-      require "addressable/uri"
-      require 'uri'
-      
+    class Client      
       include Slip::Slideshare::Favorite
       include Slip::Slideshare::Lead
       include Slip::Slideshare::Slideshow

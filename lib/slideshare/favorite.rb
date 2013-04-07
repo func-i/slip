@@ -7,6 +7,7 @@ module Slip
       # @param [String] username The username for the slideshare account
       # @param [String] password The password for the slideshare account
       # @param [Integer] slideshow_id The slideshare slideshow id
+      # @return [Hash] The response hash
       def check_favorite(username, password, slideshow_id)
         request.start(:check_favorite, {username: username, password: password, slideshow_id: slideshow_id})
       end
@@ -17,6 +18,7 @@ module Slip
       # @param [String] username The username for the slideshare account
       # @param [String] password The password for the slideshare account
       # @param [Integer] slideshow_id The slideshare slideshow id
+      # @return [Hash] The response hash
       def add_favorite(username, password, slideshow_id)
         request.start(:add_favorite, {username: username, password: password, slideshow_id: slideshow_id})
       end

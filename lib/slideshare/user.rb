@@ -5,6 +5,7 @@ module Slip
       # @see http://www.slideshare.net/developers/documentation#get_user_favorites
       # Returns user favorites
       # @param [String] username_for Username of user whose contacts are being requested
+      # @return [Hash] The response hash
       def get_user_favorites(username_for)
         request.start(:get_user_favorites, {username_for: username_for})
       end
@@ -34,6 +35,7 @@ module Slip
       # Returns user tags
       # @param [String] username The username for the slideshare account
       # @param [String] password The password for the slideshare account
+      # @return [Hash] The response hash
       def get_user_tags(username, password)
         request.start(:get_user_tags, {username: username, password: password})
       end

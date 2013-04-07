@@ -2,6 +2,9 @@ module Slip
   module Slideshare
     class Request
       require 'digest/sha1'
+      require 'net/https'
+      require "addressable/uri"
+      require 'uri'      
 
       def initialize
         @endpoint = "https://www.slideshare.net/api/2/"        
