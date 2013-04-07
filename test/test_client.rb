@@ -21,5 +21,20 @@ class TestClient < Test::Unit::TestCase
     assert slip_client.respond_to? :edit_slideshow
     assert slip_client.respond_to? :delete_slideshow
     assert slip_client.respond_to? :upload_slideshow
+
+    assert slip_client.respond_to? :get_user_favorites
+    assert slip_client.respond_to? :get_user_favourites
+    assert slip_client.respond_to? :get_user_contacts
+    assert slip_client.respond_to? :get_user_groups
+    assert slip_client.respond_to? :get_user_tags
+
+    assert slip_client.respond_to? :check_favorite
+    assert slip_client.respond_to? :check_favourite
+    assert slip_client.respond_to? :add_favorite
+    assert slip_client.respond_to? :add_favourite
+
+    assert slip_client.respond_to? :get_user_campaign_leads
+    assert slip_client.respond_to? :get_user_campaigns
+    assert slip_client.respond_to? :get_user_leads
   end
 end

@@ -1,4 +1,7 @@
+require 'slideshare/favorite'
+require 'slideshare/lead'
 require 'slideshare/slideshow'
+require 'slideshare/user'
 
 module Slip
   module Slideshare
@@ -6,9 +9,12 @@ module Slip
       require 'net/https'
       require "addressable/uri"
       require 'uri'
-
-      include Slip::Slideshare::Slideshow
       
+      include Slip::Slideshare::Favorite
+      include Slip::Slideshare::Lead
+      include Slip::Slideshare::Slideshow
+      include Slip::Slideshare::User
+
       attr_reader :request
 
       def initialize(api_key, shared_key)
