@@ -11,7 +11,12 @@ module Slip
         @api_key, @shared_key = api_key, shared_key
       end
 
-      def start(method, params)       
+      def start(method, options)
+
+        # => Use the addressable gem to build the query string params
+        uri = Addressable::URI.new    
+        uri.query_values = options
+        params = uri.query
 
         timestamp = Time.now.to_i
         hash = Digest::SHA1.hexdigest @shared_key + timestamp.to_s    

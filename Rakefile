@@ -23,4 +23,12 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Sailias"]
   # dependencies defined in Gemfile
 end
+
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/test*.rb']
+  t.verbose = true
+end
 Jeweler::RubygemsDotOrgTasks.new

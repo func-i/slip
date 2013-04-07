@@ -3,10 +3,14 @@ source "http://rubygems.org"
 # Example:
 
 gem "activesupport", ">= 2.3.5"
+gem 'addressable'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do    
-  gem "jeweler"  
+  gem "jeweler"
   gem 'simplecov'
+  gem 'shoulda'
+  gem 'test-unit'
+  gem 'fakeweb'
 end
