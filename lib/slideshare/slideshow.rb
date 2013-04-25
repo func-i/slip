@@ -29,7 +29,7 @@ module Slip
           api_method = :get_slideshows_by_user
         end
         if api_method
-          @request.start(api_method, options) 
+          @request.start(api_method, options)
         else
           raise "You must search by tag, group or username_for"
         end
@@ -61,7 +61,7 @@ module Slip
       # Delete an existing slideshow
       # @param [String] username The username for the slideshare account
       # @param [String] password The password for the slideshare account
-      # @param [Integer] slideshow_id The slideshare slideshow id to delete      
+      # @param [Integer] slideshow_id The slideshare slideshow id to delete
       # @return [Hash] The response hash
       def delete_slideshow(username, password, slideshow_id, options = {})
         options.merge!(username: username, password: password, slideshow_id: slideshow_id)
@@ -76,8 +76,8 @@ module Slip
       # @param [String] title The title for the file in slideshare
       # @param [Hash] options Additional options to pass to the API
       # @return [Hash] The response hash
-      def upload_slideshow(username, password, upload_url, title, options = {})        
-        options.merge!(username: username, password: password, upload_url: upload_url, title: title)
+      def upload_slideshow(username, password, upload_url, title, options = {})
+        options.merge!(username: username, password: password, upload_url: upload_url, slideshow_title: title)
         request.start(:upload_slideshow, options)
       end
     end
